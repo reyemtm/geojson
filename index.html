@@ -52,7 +52,7 @@ var runLayer = omnivore.gejson('metro-trails-2012.geojson')
             // so inspect it and customize to taste.
             layer.bindPopup(layer.feature.properties.TrailName);
         });
-}).addTo(map);
+});
 
 L.control.layers({
     'Base Map': L.mapbox.tileLayer('reyemtm.k6moancg').addTo(map),
