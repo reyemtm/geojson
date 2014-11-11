@@ -39,11 +39,11 @@
 
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoicmV5ZW10bSIsImEiOiJCTHUxSVZ3In0.Q-qbg_jG0JcT6bfBeiwXQg';
-var map = L.map('map',{maxZoom:20}).setView([39.9405496,-82.9016432], 11);
+var map = L.map('map',{maxZoom:20}).setView([39.9405,-82.9016], 11);
 
 L.control.layers({
     'Base Map': L.mapbox.tileLayer('reyemtm.k6moancg').addTo(map),
-    'Terrain': L.mapbox.tilelayer('reyemtm.k6mom345').addto(map),
+    'Terrain': L.mapbox.tilelayer('reyemtm.k6mom345')
 }, {
     'Trails': metro-trails-2012.geojson('metro-trails-2012.geojson')
 }).addTo(map);
