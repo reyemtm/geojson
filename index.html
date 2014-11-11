@@ -40,13 +40,6 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoicmV5ZW10bSIsImEiOiJCTHUxSVZ3In0.Q-qbg_jG0JcT6bfBeiwXQg';
 var map = L.map('map').setView([39.842,-82.878], 10);
 
-L.control.layers({
-    'Base Map': L.mapbox.tileLayer('reyemtm.k6moancg').addTo(map),
-    'Terrain': L.mapbox.tileLayer('reyemtm.k6mom345')
-}, {
-    'Trails': omnivore.geojson('metro-trails-2012.geojson')
-}).addTo(map);
-
 var runLayer = omnivore.gejson('metro-trails-2012.geojson')
     .on('ready', function() {
         map.fitBounds(runLayer.getBounds());
@@ -59,8 +52,15 @@ var runLayer = omnivore.gejson('metro-trails-2012.geojson')
             // so inspect it and customize to taste.
             layer.bindPopup(layer.feature.properties.TrailName);
         });
-    })
-    .addTo(map);
+}).addTo(map);
+
+L.control.layers({
+    'Base Map': L.mapbox.tileLayer('reyemtm.k6moancg').addTo(map),
+    'Terrain': L.mapbox.tileLayer('reyemtm.k6mom345')
+}, {
+    'Trails': omnivore.geojson('metro-trails-2012.geojson')
+}).addTo(map);
+
 </script>
 </body>
 </html>
