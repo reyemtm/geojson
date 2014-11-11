@@ -40,7 +40,7 @@ var map = L.map('map').setView([39.842,-82.878], 10);
 
 L.control.layers({
     'Base Map': L.mapbox.tileLayer('reyemtm.k6moancg').addTo(map),
-    'Terrain': L.mapbox.tilelayer('reyemtm.k6mom345')
+    'Terrain': L.mapbox.tileLayer('reyemtm.k6mom345')
 }, {
     'Trails': omnivore.geojson('metro-trails-2012.geojson')
 }).addTo(map);
