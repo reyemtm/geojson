@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<title>Morrisville Madness</title>
+<title>Franklin County Metro Park Trails</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
@@ -32,21 +32,20 @@
 <div id="footer">
     <div class="container">
       <ul class="list-inline">
-        <h1>Morristown Corners Roadwork</h1>
+        <h1>Franklin County Metro Park Trails</h1>
       </ul>  
     </div>
   </div>
 
 <script>
-L.mapbox.accessToken = 'pk.eyJ1IjoibGFuZHBsYW5uZXIiLCJhIjoicUtlZGgwYyJ9.UFYz8MD4lI4kIzk9bjGFvg';
-var map = L.map('map',{maxZoom:20}).setView([44.55490, -72.61390], 17);
+L.mapbox.accessToken = 'pk.eyJ1IjoicmV5ZW10bSIsImEiOiJCTHUxSVZ3In0.Q-qbg_jG0JcT6bfBeiwXQg';
+var map = L.map('map',{maxZoom:20}).setView([39.9405496,-82.9016432], 11);
 
 L.control.layers({
-    'Base Map': L.mapbox.tileLayer('landplanner.h3mhoan3').addTo(map),
+    'Base Map': L.mapbox.tileLayer('reyemtm.k6moancg').addTo(map),
+    'Terrain': L.mapbox.tilelayer('reyemtm.k6mom345').addto(map),
 }, {
-    'SenseFly Imagery': L.tileLayer('movegas/{z}/{x}/{y}.png', {attribution: 'SenseFly UAV Imagery provided by the UVM SAL'}),
-    'Property Boundaries': omnivore.geojson('morristown_corners.geojson'),
-    'e911 Road Centerlines': omnivore.geojson('morristown_corners_rds.geojson')
+    'Trails': metro-trails-2012.geojson('metro-trails-2012.geojson')
 }).addTo(map);
 </script>
 
