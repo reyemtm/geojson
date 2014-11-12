@@ -40,26 +40,10 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoicmV5ZW10bSIsImEiOiJCTHUxSVZ3In0.Q-qbg_jG0JcT6bfBeiwXQg';
 var map = L.map('map').setView([39.842,-82.878], 10);
 
-var runLayer = omnivore.geojson('metro-trails-2012.geojson')
-    .on('ready', function() {
-        map.fitBounds(runLayer.getBounds());
-
-        // After the 'ready' event fires, the GeoJSON contents are accessible
-        // and you can iterate through layers to bind custom popups.
-        runLayer.eachLayer(function(layer) {
-            // See the `.bindPopup` documentation for full details. This
-            // dataset has a property called `name`: your dataset might not,
-            // so inspect it and customize to taste.
-            layer.bindPopup(layer.feature.properties.TrailName);
-        });
-});
-
 L.control.layers({
     'Base Map': L.mapbox.tileLayer('reyemtm.k6moancg').addTo(map),
     'Terrain': L.mapbox.tileLayer('reyemtm.k6mom345')
-}, {
-    'Trails': omnivore.geojson('metro-trails-2012.geojson')
-}).addTo(map);
+})addTo(map);
 
 </script>
 </body>
