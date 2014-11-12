@@ -24,7 +24,6 @@
 </style>
 </head>
 <body>
-//<script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
 
 <div id='map'></div>
 
@@ -45,7 +44,7 @@ L.control.layers({
     'Terrain': L.mapbox.tileLayer('reyemtm.k6mom345')
 }).addTo(map);
 
-L.geoJson(metro-trails-2012.geojson).addTo(map);
+var layer = omnivore.geojson('metro-trails-2012.geojson', null, L.mapbox.featureLayer()).addTo(map);
 
 </script>
 </body>
