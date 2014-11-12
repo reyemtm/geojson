@@ -53,18 +53,12 @@ var runLayer = omnivore.geojson('metro-trails-2012.geojson')
         });
     })
     .addTo(map);
-var runLayer = omnivore.geojson('parks.geojson')
-    .on('ready', function() {
-        map.fitBounds(runLayer.getBounds());
-        runLayer.eachLayer(function(layer) {
-          layer.bindPopup(layer.feature.properties.name);
-        });
-    })
-    .addTo(map);
 
 L.control.layers({
     'Base Map': L.mapbox.tileLayer('reyemtm.k6moancg').addTo(map),
     'Terrain': L.mapbox.tileLayer('reyemtm.k6mom345')
+}, {
+    'Park Boundaries': omnivore.geojson('parks.geojson')
 }).addTo(map);
 
   
