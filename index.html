@@ -19,7 +19,7 @@
       z-index:999;
       overflow:auto;
       padding:5px;
-      opacity:0.8;
+      opacity:0.6;
       }
 </style>
 </head>
@@ -49,7 +49,7 @@ var runLayer = omnivore.geojson('metro-trails-2012.geojson')
             // See the `.bindPopup` documentation for full details. This
             // dataset has a property called `name`: your dataset might not,
             // so inspect it and customize to taste.
-            layer.bindPopup(layer.feature.properties.TrailName);
+            layer.bindPopup((layer.feature.properties.TrailName)<br>(layer.feature.properties.Park_Name));
         });
     })
     .addTo(map);
