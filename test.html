@@ -25,7 +25,6 @@
 </style>
 </head>
 <body>
-//<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
 <div id="header">
     <div class="container">
         <ul class="list-inline">
@@ -47,7 +46,10 @@ var esri-topo = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services
 var map = L.map('map',
             layers:[esri-topo]);
 
-var runLayer = omnivore.geojson('metro-trails-2012.geojson')
+var 	trails = new L.GeoJSON.AJAX("metro-trails-2012.geojson"),
+	boundaries = new L.GeoJSON.AJAX("parks.geojson");
+
+var runLayer = trails
     .on('ready', function() {
         map.fitBounds(runLayer.getBounds());
 
@@ -72,7 +74,7 @@ L.control.layers({
     //'Base Map': L.mapbox.tileLayer('reyemtm.k6moancg').addTo(map),
     //'Terrain': L.mapbox.tileLayer('reyemtm.k6mom345')
 }, {
-    'Park Boundaries': omnivore.geojson('parks.geojson')
+    'Park Boundaries': boundaries
 }).addTo(map);
 
   
