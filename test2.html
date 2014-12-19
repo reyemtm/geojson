@@ -34,10 +34,12 @@
     var map = L.map('map', {
 			layers: [Esri_WorldTopoMap]
 		});
-
-	L.geoJson(poi,{
-		onEachFeature: popup
+	
+	var poi = L.geoJson(poi,{
+			onEachFeature: popup
 	}).addTo(map);
+
+	map.fitBounds(poi.getBounds());
 	
 	var baseMaps = {
 		"Basemap": Esri_WorldTopoMap,
