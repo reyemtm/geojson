@@ -17,6 +17,19 @@
 	    attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
     });
     
+    var map = L.map('map', {
+			center: [39.73, -104.99],
+			zoom: 10,
+			layers: [Esri_WorldTopoMap]
+		});
+
+    
+    var baseLayers = {
+			"Basemap": Esri_WorldTopoMap,
+		};
+
+    L.control.layers(baseLayers).addTo(map);
+
   </div>
   
 </html>
