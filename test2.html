@@ -28,7 +28,7 @@
     
     function popup(feature, layer) {
 		if (feature.properties && feature.properties.NAME) {
-			layer.bindPopup(feature.properties.NAME + '<br>' +feature.properties.CATEGORY);
+			layer.bindPopup( '<bold>' +feature.properties.NAME + '<br>' +feature.properties.CATEGORY);
 		}
 		else if (feature.properties && feature.properties.CATEGORY) {
 			layer.bindPopup(feature.properties.CATEGORY);
