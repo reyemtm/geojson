@@ -26,15 +26,15 @@
 //		}
 //	}
     
-    var poi = L.geoJson(poi, {
-  
-    });
-    
     var map = L.map('map', {
 			center: [39.028135, -83.065069],
 			zoom: 10,
-			layers: [Esri_WorldTopoMap, poi]
+			layers: [Esri_WorldTopoMap]
 		});
+
+	L.geoJson(poi,{
+		
+	}).addTo(map);
 }
   </script>
   </div>
