@@ -36,7 +36,7 @@
 			layers: [Esri_WorldTopoMap]
 		});
 	
-	var poi = L.geoJson(poi,{
+	var points = L.geoJson(poi,{
 			onEachFeature: popup
 	}).addTo(map);
 
@@ -47,7 +47,7 @@
 		"Imagery": Esri_WorldImagery
 	};
 	var overlayMaps = {
-		 "Points of Interest": poi
+		 "Points of Interest": points
 	};
 	
 	L.control.layers(baseMaps, overlayMaps).addTo(map);
