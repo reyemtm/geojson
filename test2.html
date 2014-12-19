@@ -20,15 +20,15 @@
 	    attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
     });
     
-    function popup(feature, layer) {
-		if (feature.properties && feature.properties.name) {
-			layer.bindPopup(feature.properties.name);
-		}
-	}
+    //function popup(feature, layer) {
+//		if (feature.properties && feature.properties.name) {
+//			layer.bindPopup(feature.properties.name);
+//		}
+//	}
     
-    var poi = L.geojson(poi, {
-    	onEachFeature:popup
-    })
+    var poi = L.geoJson(poi, {
+  
+    });
     
     var map = L.map('map', {
 			center: [39.73, -104.99],
