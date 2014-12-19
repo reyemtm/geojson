@@ -20,11 +20,11 @@
 	    attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
     });
     
-//    function popup(feature, layer) {
-//		if (feature.properties && feature.properties.NAME) {
-//			layer.bindPopup(feature.properties.NAME);
-//		}
-//	}
+    function popup(feature, layer) {
+		if (feature.properties && feature.properties.NAME) {
+			layer.bindPopup(feature.properties.NAME);
+		}
+	}
     
     var map = L.map('map', {
 			center: [39.028135, -83.065069],
@@ -32,22 +32,9 @@
 			layers: [Esri_WorldTopoMap]
 		});
 
-var runLayer = L.geoJson(poi)
-    .on('ready', function() {
-        map.fitBounds(runLayer.getBounds());
-        // After the 'ready' event fires, the GeoJSON contents are accessible
-        // and you can iterate through layers to bind custom popups.
-        runLayer.eachLayer(function(layer) {
-            // See the `.bindPopup` documentation for full details. This
-            // dataset has a property called `name`: your dataset might not,
-            // so inspect it and customize to taste.
-            layer.bindPopup(layer.feature.properties.Name);
-        });
-    })
-    .addTo(map);
-//	L.geoJson(poi,{
-//		onEachFeature: popup
-//	}).addTo(map);
+	L.geoJson(poi,{
+		onEachFeature: popup
+	}).addTo(map);
 }
   </script>
   </div>
