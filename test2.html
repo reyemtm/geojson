@@ -31,7 +31,8 @@
 		}
 	}
     
-    var map = L.map('map', {
+    var map = L.map('map', {center: [39.73, -104.99],
+			zoom: 10,
 			layers: [Esri_WorldTopoMap]
 		});
 	
@@ -39,7 +40,7 @@
 			onEachFeature: popup
 	}).addTo(map);
 
-	map.fitBounds(poi.getBounds());
+	//map.fitBounds(poi.getBounds());
 	
 	var baseMaps = {
 		"Basemap": Esri_WorldTopoMap,
