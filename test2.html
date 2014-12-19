@@ -34,15 +34,7 @@
 			layer.bindPopup(feature.properties.CATEGORY);
 		}
 	};
-    
-//function onEachFeature(feature, layer) {
-//if (feature.properties.Anum) {
-//    layer.bindPopup( '<center>' +feature.properties.Anum +'<br><center> Hunting District: ' +feature.properties.DISTRICT+ "<br><center> Elk Hunter Success " +feature.properties.Success +" %");
-//}
-//else if (feature.properties.Plot) {
-//    layer.bindPopup('<img src= "' +feature.properties.Plot +'" "alt="Elk Hunting Success Trends Plot" height="500" width="500">');
-//}
-//};    
+   
     var map = L.map('map', {center: [38.809365, -83.517054],
 			zoom: 10,
 			layers: [Esri_WorldTopoMap]
