@@ -7,12 +7,11 @@
   
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
   
-  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-
 </head>
 <body>
   <div id="map" style="width=800px; height: 600px">
-    
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <script>
     var Esri_WorldTopoMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
 	    attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
     });
@@ -22,6 +21,7 @@
 			zoom: 10,
 			layers: [Esri_WorldTopoMap]
 		});
+  </script>
   </div>
 </body>  
 </html>
