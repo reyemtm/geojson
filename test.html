@@ -35,8 +35,16 @@
 <div id='map'></div>
 
 <script>
-L.mapbox.accessToken = 'pk.eyJ1IjoicmV5ZW10bSIsImEiOiJCTHUxSVZ3In0.Q-qbg_jG0JcT6bfBeiwXQg';
-var map = L.map('map');
+//L.mapbox.accessToken = 'pk.eyJ1IjoicmV5ZW10bSIsImEiOiJCTHUxSVZ3In0.Q-qbg_jG0JcT6bfBeiwXQg';
+
+var esri-topo = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community',
+
+    imagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community';	
+
+var map = L.map('map',
+            layers:[esri-topo]);
 
 var runLayer = omnivore.geojson('metro-trails-2012.geojson')
     .on('ready', function() {
@@ -53,9 +61,15 @@ var runLayer = omnivore.geojson('metro-trails-2012.geojson')
     })
     .addTo(map);
 
+var baselayers = {
+        "Basemap": esri-topo,
+        "Imagery": imagery
+};
+
 L.control.layers({
-    'Base Map': L.mapbox.tileLayer('reyemtm.k6moancg').addTo(map),
-    'Terrain': L.mapbox.tileLayer('reyemtm.k6mom345')
+    baseLayers
+    //'Base Map': L.mapbox.tileLayer('reyemtm.k6moancg').addTo(map),
+    //'Terrain': L.mapbox.tileLayer('reyemtm.k6mom345')
 }, {
     'Park Boundaries': omnivore.geojson('parks.geojson')
 }).addTo(map);
