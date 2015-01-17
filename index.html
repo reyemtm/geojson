@@ -57,7 +57,8 @@ L.control.layers({
     'Base Map': L.mapbox.tileLayer('reyemtm.k6moancg').addTo(map),
     'Terrain': L.mapbox.tileLayer('reyemtm.k6mom345')
 }, {
-    'Park Boundaries': omnivore.geojson('parks.geojson')
+    'Park Boundaries': omnivore.geojson('parks.geojson'),
+    "W Mains": runLayer
 }).addTo(map);
 
   
